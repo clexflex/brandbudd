@@ -5,6 +5,7 @@ import theme from '@/theme/theme';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Inter } from 'next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Header />
-          <main>{children}</main>
+          <main>{children}<SpeedInsights /></main>
           <Footer />
         </ThemeProvider>
       </body>
