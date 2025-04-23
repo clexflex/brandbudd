@@ -163,7 +163,7 @@ export default function TermsOfServicePage() {
                             10. Changes to Terms
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            We reserve the right to modify these terms at any time. We will notify users of any material changes by posting the new Terms of Service on this page and updating the "Last updated" date.
+                            We reserve the right to modify these terms at any time. We will notify users of any material changes by posting the new Terms of Service on this page and updating the &quot;Last updated&quot; date.
                         </Typography>
                         
                         <Divider sx={{ my: 4 }} />

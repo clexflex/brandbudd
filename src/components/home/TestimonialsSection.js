@@ -160,7 +160,7 @@ const TestimonialsSection = () => {
                       lineHeight: 1.6,
                     }}
                   >
-                    "{testimonials[activeIndex].quote}"
+                    &quot;{testimonials[activeIndex].quote}&quot;
                   </Typography>
                   
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>

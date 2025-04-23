@@ -480,7 +480,7 @@ export default function ResumePage() {
                                 </Typography>
 
                                 <Typography variant="body1" sx={{ mb: 3, maxWidth: 700, mx: 'auto' }}>
-                                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                                    I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                                 </Typography>
 
                                 <Button

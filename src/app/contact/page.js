@@ -187,7 +187,7 @@ export default function ContactPage() {
         
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Grid container spacing={6} justifyContent="center">
-            <Grid itemsize={{ xs: 12, sm: 10 }}   textAlign="center">
+            <Grid item size={{ xs: 12, sm: 10 }}   textAlign="center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -215,7 +215,7 @@ export default function ContactPage() {
                     mx: 'auto',
                   }}
                 >
-                  Let's discuss how we can help your business grow
+                  Let&apos;s discuss how we can help your business grow
                 </Typography>
               </motion.div>
             </Grid>
@@ -227,7 +227,7 @@ export default function ContactPage() {
       <Box sx={{ py: { xs: 8, md: 8 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={6}>
-            <Grid itemsize={{ xs: 12, md: 8 }}  >
+            <Grid item size={{ xs: 12, md: 8 }}  >
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}

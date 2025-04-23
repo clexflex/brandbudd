@@ -176,7 +176,7 @@ export default function AboutPage() {
                                 </Typography>
 
                                 <Typography variant="body1">
-                                    Today, we're proud to serve clients across diverse industries, helping them transform their digital presence and achieve measurable business results through strategic, data-driven approaches and cutting-edge technology solutions.
+                                    Today, we&apos;re proud to serve clients across diverse industries, helping them transform their digital presence and achieve measurable business results through strategic, data-driven approaches and cutting-edge technology solutions.
                                 </Typography>
                             </motion.div>
                         </Grid>

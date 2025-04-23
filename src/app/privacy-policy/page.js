@@ -62,7 +62,7 @@ export default function PrivacyPolicyPage() {
                         }}
                     >
                         <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-                            BrandBudd ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website brandbudd.com or use our services.
+                            BrandBudd (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website brandbudd.com or use our services.
                         </Typography>
                         
                         <Typography variant="h4" component="h2" sx={{ mt: 4, mb: 2, fontWeight: 600 }}>
@@ -156,7 +156,7 @@ export default function PrivacyPolicyPage() {
                             6. Changes to This Privacy Policy
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+                            We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
                         </Typography>
                         
                         <Divider sx={{ my: 4 }} />
