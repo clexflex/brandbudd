@@ -325,7 +325,7 @@ export default function ExcelFlow360Page() {
                     </Typography>
                     
                     <Typography variant="body1" sx={{ mb: 3 }}>
-                      ExcelFlow360's frontend is built with React and enhanced with Material UI and Tailwind CSS to create a responsive, user-friendly interface that works seamlessly across all devices.
+                      ExcelFlow360&apos;s frontend is built with React and enhanced with Material UI and Tailwind CSS to create a responsive, user-friendly interface that works seamlessly across all devices.
                     </Typography>
                     
                     <List>
@@ -421,7 +421,7 @@ export default function ExcelFlow360Page() {
                     </Typography>
                     
                     <Typography variant="body1" sx={{ mb: 3 }}>
-                      ExcelFlow360's backend is built on Node.js and Express, providing a robust API architecture that efficiently processes Excel files and manages user data.
+                      ExcelFlow360&apos;s backend is built on Node.js and Express, providing a robust API architecture that efficiently processes Excel files and manages user data.
                     </Typography>
                     
                     <List>
