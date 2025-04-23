@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 import { Box, Container, Grid, Typography, TextField, Button, Card, CardContent, Snackbar, Alert, MenuItem, Paper, IconButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { motion } from 'framer-motion';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useRecaptcha } from '@/hooks/useRecaptcha';
 import SectionTitle from '@/components/common/SectionTitle';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -37,7 +37,7 @@ const budgetRanges = [
 
 export default function ContactPage() {
   const theme = useTheme();
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const { executeRecaptcha, isLoaded } = useRecaptcha(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY);
   
   // Form state
   const [formData, setFormData] = useState({
@@ -96,8 +96,8 @@ export default function ContactPage() {
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     
-    if (!executeRecaptcha) {
-      setSnackbarMessage('reCAPTCHA not available. Please refresh the page and try again.');
+    if (!isLoaded) {
+      setSnackbarMessage('reCAPTCHA not loaded. Please refresh the page and try again.');
       setSnackbarSeverity('error');
       setOpenSnackbar(true);
       return;
@@ -152,12 +152,13 @@ export default function ContactPage() {
         setLoading(false);
       }
     }
-  }, [executeRecaptcha, formData, validateForm]);
+  }, [executeRecaptcha, isLoaded, formData, validateForm]);
   
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
   
+ 
   return (
     <Box component="div">
       {/* Hero Section */}

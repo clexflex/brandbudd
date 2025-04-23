@@ -4,7 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/theme/theme';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import RecaptchaProvider from '@/components/providers/RecaptchaProvider';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -23,11 +22,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <RecaptchaProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </RecaptchaProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
