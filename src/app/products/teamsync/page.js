@@ -199,7 +199,7 @@ export default function TeamSyncPage() {
                                         color: 'rgba(255, 255, 255, 0.7)',
                                     }}
                                 >
-                                    TeamSync is a powerful employee management platform that streamlines attendance tracking, leave management, and payroll processing. Designed to save time and reduce errors, it's the all-in-one solution for modern HR departments.
+                                    TeamSync is a powerful employee management platform that streamlines attendance tracking, leave management, and payroll processing. Designed to save time and reduce errors, it&apos;s the all-in-one solution for modern HR departments.
                                 </Typography>
 
                                 <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2 }}>
