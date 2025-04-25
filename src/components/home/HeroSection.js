@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const HeroSection = () => {
   const theme = useTheme();
-  
+
   return (
     <Box
       sx={{
@@ -32,10 +32,10 @@ const HeroSection = () => {
           zIndex: 0,
         }}
       />
-      
+
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid item size={{ xs: 12, md: 6 }}>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -56,7 +56,7 @@ const HeroSection = () => {
               >
                 Elevate Your Digital Presence
               </Typography>
-              
+
               <Typography
                 variant="h4"
                 component="p"
@@ -68,7 +68,7 @@ const HeroSection = () => {
               >
                 Strategic marketing solutions and custom software development to transform your business
               </Typography>
-              
+
               <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, mb: 4 }}>
                 <Button
                   variant="contained"
@@ -105,7 +105,7 @@ const HeroSection = () => {
                   View Portfolio
                 </Button>
               </Box>
-              
+
               <Typography
                 variant="body1"
                 sx={{
@@ -114,7 +114,7 @@ const HeroSection = () => {
               >
                 Trusted by innovative companies across industries
               </Typography>
-              
+
               {/* Client logos would go here */}
               <Box
                 sx={{
@@ -126,23 +126,56 @@ const HeroSection = () => {
                   opacity: 0.6,
                 }}
               >
-                {/* Placeholder for client logos */}
-                {['Client 1', 'Client 2', 'Client 3', 'Client 4'].map((client, index) => (
+                {[
+                  { src: '/images/clients/client-1.webp', name: 'Client 1' },
+                  { src: '/images/clients/client-2.png', name: 'Client 2' },
+                  { src: '/images/clients/client-3.png', name: 'Client 3' },
+                  { src: '/images/clients/client-4.png', name: 'Client 4' },
+                  { src: '/images/clients/client-5.png', name: 'Client 5' },
+                  { src: '/images/clients/client-7.png', name: 'Client 7' },
+                  { src: '/images/clients/client-8.png', name: 'Client 8' },
+                  { src: '/images/clients/client-9.png', name: 'Client 9' },
+                  { src: '/images/clients/client-8.webp', name: 'Client 10' },
+                  { src: '/images/clients/client-14.svg', name: 'Client 12' },
+                  { src: '/images/clients/client-20.png', name: 'Client 13' },
+                  { src: '/images/clients/client-22.webp', name: 'Client 14' },
+                  { src: '/images/clients/client-23.webp', name: 'Client 15' },
+                  { src: '/images/clients/client-24.jpg', name: 'Client 16' },
+                  { src: '/images/clients/client-25.jpg', name: 'Client 17' },
+                  { src: '/images/clients/client-26.png', name: 'Client 18' },
+                  { src: '/images/clients/client-27.jpg', name: 'Client 19' },
+                  { src: '/images/clients/client-30.png', name: 'Client 20' },
+                  { src: '/images/clients/client-32.png', name: 'Client 21' },
+                  { src: '/images/clients/client-33.webp', name: 'Client 22' },
+                  { src: '/images/clients/client-35.png', name: 'Client 23' },
+                  { src: '/images/clients/client-36.webp', name: 'Client 25' },
+                  { src: '/images/clients/client-37.png', name: 'Client 26' },
+                  { src: '/images/clients/client-38.png', name: 'Client 27' },
+                ].map((client, index) => (
                   <Box
                     key={index}
                     sx={{
+                      position: 'relative',
                       height: 30,
                       width: 100,
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
                       borderRadius: 1,
+                      overflow: 'hidden',
                     }}
-                  />
+                  >
+                    <Image
+                      src={client.src}
+                      alt={`${client.name} logo`}
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      sizes="100px"
+                    />
+                  </Box>
                 ))}
               </Box>
             </motion.div>
           </Grid>
-          
-          <Grid item xs={12} md={6}>
+
+          <Grid item size={{ xs: 12, md: 6 }}>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -155,28 +188,20 @@ const HeroSection = () => {
                   width: '100%',
                   borderRadius: 4,
                   overflow: 'hidden',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
                 }}
               >
-                {/* Placeholder for hero image - replace with actual image in production */}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.secondary.dark} 100%)`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <Typography variant="h4" align="center" sx={{ px: 3 }}>
-                    Hero Image Placeholder
-                  </Typography>
-                </Box>
+
+                <Image
+                  src="/images/hero/hero2.png"
+                  alt="Digital marketing and software development services by BrandBudd"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                  quality={90}
+                />
               </Box>
+
             </motion.div>
           </Grid>
         </Grid>

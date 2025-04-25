@@ -401,7 +401,7 @@ export default function ContactPage() {
                           Email Us
                         </Typography>
                         <Typography variant="body1">
-                          info@brandbudd.com
+                          brandbuddpersonal@gmail.com
                         </Typography>
                       </Box>
                     </Box>
@@ -413,7 +413,7 @@ export default function ContactPage() {
                           Call Us
                         </Typography>
                         <Typography variant="body1">
-                          +1 (555) 123-4567
+                          +91 8010881394
                         </Typography>
                       </Box>
                     </Box>
@@ -425,9 +425,7 @@ export default function ContactPage() {
                           Visit Our Office
                         </Typography>
                         <Typography variant="body1">
-                          123 Innovation Way<br />
-                          Tech District<br />
-                          New York, NY 10001
+                          Maharashtra, India  416003
                         </Typography>
                       </Box>
                     </Box>
@@ -441,7 +439,7 @@ export default function ContactPage() {
                   
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
                     <Typography variant="body1" fontWeight={500}>Monday - Friday</Typography>
-                    <Typography variant="body1">9:00 AM - 6:00 PM</Typography>
+                    <Typography variant="body1">9:00 AM - 8:00 PM</Typography>
                   </Box>
                   
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
@@ -461,6 +459,7 @@ export default function ContactPage() {
                   </Typography>
                   
                   <Box sx={{ display: 'flex', gap: 2 }}>
+                  <a href={"https://www.facebook.com/brandbudd/"} target="_blank" rel="noopener noreferrer">
                     <IconButton 
                       aria-label="facebook" 
                       sx={{ 
@@ -473,7 +472,8 @@ export default function ContactPage() {
                     >
                       <FacebookIcon />
                     </IconButton>
-                    
+                  </a>
+                  <a href={"#"} target="_blank" rel="noopener noreferrer">  
                     <IconButton 
                       aria-label="twitter" 
                       sx={{ 
@@ -486,7 +486,8 @@ export default function ContactPage() {
                     >
                       <TwitterIcon />
                     </IconButton>
-                    
+                   </a>
+                   <a href={"https://www.linkedin.com/company/brandbudd/"} target="_blank" rel="noopener noreferrer"> 
                     <IconButton 
                       aria-label="linkedin" 
                       sx={{ 
@@ -499,7 +500,8 @@ export default function ContactPage() {
                     >
                       <LinkedInIcon />
                     </IconButton>
-                    
+                   </a>
+                   <a href={"https://www.instagram.com/brand_budd"} target="_blank" rel="noopener noreferrer"> 
                     <IconButton 
                       aria-label="instagram" 
                       sx={{ 
@@ -512,34 +514,13 @@ export default function ContactPage() {
                     >
                       <InstagramIcon />
                     </IconButton>
+                    </a>
                   </Box>
                 </Paper>
               </motion.div>
             </Grid>
           </Grid>
         </Container>
-      </Box>
-      
-      {/* Map Section */}
-      <Box sx={{ height: '500px', width: '100%', position: 'relative' }}>
-        {/* Placeholder for Google Maps - replace with actual map in production */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: theme.palette.grey[200],
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Typography variant="h5" align="center">
-            Google Maps Integration
-          </Typography>
-        </Box>
       </Box>
       
       {/* Snackbar for form submission */}

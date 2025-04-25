@@ -13,17 +13,16 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import SecurityIcon from '@mui/icons-material/Security';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import FolderIcon from '@mui/icons-material/Folder';
-
-// SEO Metadata
-export const Metadata = {
-    title: 'TeamSync - Employee Management Solution | BrandBudd',
-    description: 'TeamSync is a comprehensive employee management system with attendance tracking, leave management, and payroll processing capabilities.',
-    keywords: 'TeamSync, employee management, attendance tracking, leave management, payroll processing, HR software',
-};
+import Image from 'next/image';
 
 export default function TeamSyncPage() {
     const theme = useTheme();
-
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
     const features = [
         {
             icon: <PeopleIcon color="primary" fontSize="large" />,
@@ -163,7 +162,7 @@ export default function TeamSyncPage() {
 
                 <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
                     <Grid container spacing={6} alignItems="center">
-                        <Grid item  size={{ xs: 12, md: 6 }}  >
+                        <Grid item size={{ xs: 12, md: 6 }}  >
                             <motion.div
                                 initial={{ opacity: 0, x: -30 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -220,6 +219,7 @@ export default function TeamSyncPage() {
                                     <Button
                                         variant="outlined"
                                         size="large"
+                                        onClick={() => scrollToSection('pricing')}
                                         sx={{
                                             px: 4,
                                             py: 1.5,
@@ -239,44 +239,35 @@ export default function TeamSyncPage() {
                             </motion.div>
                         </Grid>
 
-                        <Grid item  size={{ xs: 12, md: 6 }}  >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-              >
-                <Box
-                  sx={{
-                    position: 'relative',
-                    height: { xs: '300px', sm: '400px', md: '500px' },
-                    width: '100%',
-                    borderRadius: 4,
-                    overflow: 'hidden',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                    background: '#fff',
-                  }}
-                >
-                  {/* Placeholder for product image - replace with actual image in production */}
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: theme.palette.background.paper,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <Typography variant="h4" align="center" sx={{ px: 3, color: theme.palette.text.primary }}>
-                      TeamSync Dashboard Preview
-                    </Typography>
-                  </Box>
-                </Box>
-              </motion.div>
-            </Grid>
+                        <Grid item size={{ xs: 12, md: 6 }}  >
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.7, delay: 0.2 }}
+                            >
+                                <Box
+                                    sx={{
+                                        position: 'relative',
+                                        height: { xs: '300px', sm: '400px', md: '500px' },
+                                        width: '100%',
+                                        borderRadius: 4,
+                                        overflow: 'hidden',
+                                        boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                                        background: '#fff',
+                                    }}
+                                >
+                                    <Image
+                                        src="/images/portfolio/teamsync-dashboard-preview2.png" // Use the same image or create a dashboard-specific image
+                                        alt="TeamSync Dashboard - Comprehensive employee management interface"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        quality={90}
+                                        priority
+                                    />
+                                </Box>
+                            </motion.div>
+                        </Grid>
                     </Grid>
                 </Container>
             </Box>
@@ -291,7 +282,7 @@ export default function TeamSyncPage() {
 
                     <Grid container spacing={4}>
                         {features.map((feature, index) => (
-                            <Grid item  size={{ xs: 12, sm: 6, md: 12 }}  key={index}>
+                            <Grid item size={{ xs: 12, sm: 6, md: 12 }} key={index}>
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -347,7 +338,7 @@ export default function TeamSyncPage() {
             >
                 <Container maxWidth="lg">
                     <Grid container spacing={6} alignItems="center">
-                        <Grid item  size={{ xs: 12, md: 6 }}  >
+                        <Grid item size={{ xs: 12, md: 6 }}  >
                             <SectionTitle
                                 title="Technical Features"
                                 subtitle="Built with modern technology to ensure reliability, security, and excellent performance."
@@ -383,7 +374,7 @@ export default function TeamSyncPage() {
                             </List>
                         </Grid>
 
-                        <Grid item  size={{ xs: 12, md: 6 }}  >
+                        <Grid item size={{ xs: 12, md: 6 }}  >
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -393,31 +384,21 @@ export default function TeamSyncPage() {
                                 <Box
                                     sx={{
                                         position: 'relative',
-                                        height: { xs: '300px', sm: '400px', md: '450px' },
+                                        height: { xs: '300px', sm: '400px', md: '420px' },
                                         width: '100%',
                                         borderRadius: 4,
                                         overflow: 'hidden',
                                         boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
                                     }}
                                 >
-                                    {/* Placeholder for technical feature image - replace with actual image in production */}
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            top: 0,
-                                            left: 0,
-                                            right: 0,
-                                            bottom: 0,
-                                            background: `linear-gradient(135deg, ${theme.palette.primary.light} 0%, ${theme.palette.secondary.light} 100%)`,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                        }}
-                                    >
-                                        <Typography variant="h5" align="center" sx={{ px: 3, color: 'white' }}>
-                                            Technical Features Illustration
-                                        </Typography>
-                                    </Box>
+                                    <Image
+                                        src="/images/portfolio/teamsync-attendance-module-preview.png" // You'll need to add this image
+                                        alt="TeamSync Technical Features - Architecture overview and capabilities"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        quality={90}
+                                    />
                                 </Box>
                             </motion.div>
                         </Grid>
@@ -426,7 +407,7 @@ export default function TeamSyncPage() {
             </Box>
 
             {/* Pricing Section */}
-            <Box sx={{ py: { xs: 8, md: 12 } }}>
+            <Box id="pricing" sx={{ py: { xs: 8, md: 12 } }}>
                 <Container maxWidth="lg">
                     <SectionTitle
                         title="Pricing Plans"
@@ -435,7 +416,7 @@ export default function TeamSyncPage() {
 
                     <Grid container spacing={4} sx={{ mt: 2 }}>
                         {pricingPlans.map((plan, index) => (
-                            <Grid item  size={{ xs: 12, md: 4 }}   key={index}>
+                            <Grid item size={{ xs: 12, md: 4 }} key={index}>
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}

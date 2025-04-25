@@ -13,6 +13,7 @@ import DevicesIcon from '@mui/icons-material/Devices';
 import StorageIcon from '@mui/icons-material/Storage';
 import AppShortcutIcon from '@mui/icons-material/AppShortcut';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -20,7 +21,7 @@ const projects = [
     title: 'TeamSync',
     subtitle: 'Employee Management Solution',
     description: 'A comprehensive team management solution with attendance tracking, leave management, and payroll processing capabilities.',
-    image: '/images/portfolio/teamsync.jpg',
+    image: '/images/portfolio/teamsync-dashboard-preview.png',
     link: '/products/teamsync',
     featured: true,
     category: 'software',
@@ -39,7 +40,7 @@ const projects = [
     title: 'ExcelFlow360',
     subtitle: 'Excel Data Management Solution',
     description: 'MERN stack application for managing employee data with Excel file uploads and employee EOD status tracking.',
-    image: '/images/portfolio/excelflow360.jpg',
+    image: '/images/portfolio/Processed_Excel_ExcelFlow360.png',
     link: '/products/excelflow360',
     featured: true,
     category: 'software',
@@ -58,7 +59,7 @@ const projects = [
     title: 'E-Commerce Platform',
     subtitle: 'Custom Shopping Experience',
     description: 'Custom e-commerce solution with integrated payment processing and inventory management.',
-    image: '/images/portfolio/ecommerce.jpg',
+    image: '/images/portfolio/ecomm1.png',
     link: '/portfolio/ecommerce-platform',
     category: 'web',
     technologies: ['React', 'Next.js', 'Stripe', 'MongoDB', 'AWS'],
@@ -76,7 +77,7 @@ const projects = [
     title: 'Healthcare Portal',
     subtitle: 'Patient Management System',
     description: 'Secure patient portal with appointment scheduling, medical records, and telemedicine capabilities.',
-    image: '/images/portfolio/healthcare.jpg',
+    image: '/images/portfolio/healthcare_Dashboard_horizontal.png',
     link: '/portfolio/healthcare-portal',
     category: 'web',
     technologies: ['React', 'Node.js', 'PostgreSQL', 'WebRTC', 'Material UI'],
@@ -94,7 +95,7 @@ const projects = [
     title: 'Digital Marketing Campaign',
     subtitle: 'Multi-Channel Strategy',
     description: 'Comprehensive digital marketing campaign spanning social media, email, and PPC advertising.',
-    image: '/images/portfolio/marketing.jpg',
+    image: '/images/portfolio/marketing2.png',
     link: '/portfolio/marketing-campaign',
     category: 'marketing',
     technologies: ['Google Ads', 'Facebook Ads', 'Email Marketing', 'Content Marketing', 'Analytics'],
@@ -112,7 +113,7 @@ const projects = [
     title: 'Fitness Tracking App',
     subtitle: 'Health and Wellness Solution',
     description: 'Mobile application for fitness tracking, meal planning, and community engagement.',
-    image: '/images/portfolio/mobile-app.jpg',
+    image: '/images/portfolio/fitness-app2.png',
     link: '/portfolio/mobile-app',
     category: 'mobile',
     technologies: ['React Native', 'Firebase', 'Node.js', 'Express', 'Google Fit API'],
@@ -131,15 +132,15 @@ export default function PortfolioPage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [activeTab, setActiveTab] = useState('all');
-  
+
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
   };
-  
-  const filteredProjects = activeTab === 'all' 
-    ? projects 
+
+  const filteredProjects = activeTab === 'all'
+    ? projects
     : projects.filter(project => project.category === activeTab);
-  
+
   return (
     <Box component="div">
       {/* Hero Section */}
@@ -166,10 +167,10 @@ export default function PortfolioPage() {
             zIndex: 0,
           }}
         />
-        
+
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Grid container spacing={6} justifyContent="center">
-            <Grid item  size={{ xs: 12, md: 10 }}   textAlign="center">
+            <Grid item size={{ xs: 12, md: 10 }} textAlign="center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -185,7 +186,7 @@ export default function PortfolioPage() {
                 >
                   Our Portfolio
                 </Typography>
-                
+
                 <Typography
                   variant="h4"
                   component="p"
@@ -204,7 +205,7 @@ export default function PortfolioPage() {
           </Grid>
         </Container>
       </Box>
-      
+
       {/* Portfolio Filter Tabs */}
       <Box sx={{ py: 4, borderBottom: `1px solid ${theme.palette.divider}` }}>
         <Container maxWidth="lg">
@@ -228,7 +229,7 @@ export default function PortfolioPage() {
           </Tabs>
         </Container>
       </Box>
-      
+
       {/* Featured Projects */}
       <Box sx={{ py: { xs: 8, md: 12 } }}>
         <Container maxWidth="lg">
@@ -236,10 +237,10 @@ export default function PortfolioPage() {
             title="Featured Projects"
             subtitle="Explore our most impactful work that has transformed businesses and delighted users."
           />
-          
+
           <Grid container spacing={6}>
             {filteredProjects.filter(project => project.featured).map((project, index) => (
-              <Grid item  size={{ xs: 12, sm: 12, md: 12 }}   key={project.id}>
+              <Grid item size={{ xs: 12, sm: 12, md: 12 }} key={project.id}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -262,62 +263,53 @@ export default function PortfolioPage() {
                         minHeight: { xs: '300px', md: '400px' },
                       }}
                     >
-                      {/* Placeholder for project image - replace with actual image in production */}
-                      <Box
-                        sx={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          background: `linear-gradient(135deg, ${theme.palette.primary.light} 0%, ${theme.palette.secondary.light} 100%)`,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Typography variant="h4" sx={{ color: 'white' }}>
-                          {project.title} Image
-                        </Typography>
-                      </Box>
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} - ${project.description}`}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        quality={90}
+                        priority={index === 0} // prioritize first image
+                      />
                     </Box>
-                    
+
                     <CardContent sx={{ width: { xs: '100%', md: '50%' }, p: 4 }}>
                       <Box sx={{ mb: 2 }}>
                         <Chip
                           label={
                             project.category === 'web' ? 'Web Development' :
-                            project.category === 'software' ? 'Software Solution' :
-                            project.category === 'marketing' ? 'Digital Marketing' : 'Mobile App'
+                              project.category === 'software' ? 'Software Solution' :
+                                project.category === 'marketing' ? 'Digital Marketing' : 'Mobile App'
                           }
                           color="primary"
                           size="small"
                           sx={{ mr: 1, mb: 1 }}
                         />
                       </Box>
-                      
+
                       <Typography variant="h3" component="h2" sx={{ mb: 1, fontWeight: 700 }}>
                         {project.title}
                       </Typography>
-                      
+
                       <Typography variant="subtitle1" color="primary" sx={{ mb: 2, fontWeight: 500 }}>
                         {project.subtitle}
                       </Typography>
-                      
+
                       <Typography variant="body1" sx={{ mb: 3 }}>
                         {project.description}
                       </Typography>
-                      
+
                       <Typography variant="h6" component="h3" sx={{ mb: 2, fontWeight: 600 }}>
                         Technologies Used
                       </Typography>
-                      
+
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 3 }}>
                         {project.technologies.map((tech) => (
                           <Chip key={tech} label={tech} variant="outlined" size="small" />
                         ))}
                       </Box>
-                      
+
                       <Button
                         variant="contained"
                         color="primary"
@@ -336,10 +328,10 @@ export default function PortfolioPage() {
           </Grid>
         </Container>
       </Box>
-      
+
       {/* All Projects Grid */}
-      <Box 
-        sx={{ 
+      <Box
+        sx={{
           py: { xs: 8, md: 12 },
           backgroundColor: theme.palette.background.default,
         }}
@@ -349,10 +341,10 @@ export default function PortfolioPage() {
             title="All Projects"
             subtitle="Browse our complete portfolio of work across various industries and technologies."
           />
-          
+
           <Grid container spacing={4}>
             {filteredProjects.filter(project => !project.featured).map((project, index) => (
-              <Grid item size={{ xs: 12, sm: 6, md: 4 }}  key={project.id}>
+              <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={project.id}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -376,45 +368,37 @@ export default function PortfolioPage() {
                     href={project.link}
                   >
                     <Box sx={{ position: 'relative', paddingTop: '56.25%' }}> {/* 16:9 aspect ratio */}
-                      <Box
-                        component="div"
-                        sx={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          backgroundColor: theme.palette.grey[200],
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Typography variant="subtitle1">Project Image</Typography>
-                      </Box>
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} - ${project.description}`}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={85}
+                      />
                     </Box>
-                    
+
                     <CardContent sx={{ flexGrow: 1, p: 3 }}>
                       <Box sx={{ mb: 2 }}>
                         <Chip
                           label={
                             project.category === 'web' ? 'Web Development' :
-                            project.category === 'software' ? 'Software Solution' :
-                            project.category === 'marketing' ? 'Digital Marketing' : 'Mobile App'
+                              project.category === 'software' ? 'Software Solution' :
+                                project.category === 'marketing' ? 'Digital Marketing' : 'Mobile App'
                           }
                           color="primary"
                           size="small"
                         />
                       </Box>
-                      
+
                       <Typography variant="h5" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
                         {project.title}
                       </Typography>
-                      
+
                       <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                         {project.description}
                       </Typography>
-                      
+
                       <Box sx={{ display: 'flex', alignItems: 'center', mt: 'auto' }}>
                         <Typography
                           variant="subtitle2"
@@ -426,8 +410,8 @@ export default function PortfolioPage() {
                         >
                           View Details
                         </Typography>
-                        <ArrowForwardIcon 
-                          fontSize="small" 
+                        <ArrowForwardIcon
+                          fontSize="small"
                           sx={{ color: theme.palette.primary.main }}
                         />
                       </Box>
@@ -439,7 +423,7 @@ export default function PortfolioPage() {
           </Grid>
         </Container>
       </Box>
-      
+
       {/* Case Studies Section */}
       <Box sx={{ py: { xs: 8, md: 12 } }} id="case-studies">
         <Container maxWidth="lg">
@@ -447,10 +431,10 @@ export default function PortfolioPage() {
             title="Case Studies"
             subtitle="Dive deeper into our approach, solutions, and the transformative results we've achieved for our clients."
           />
-          
+
           <Grid container spacing={6}>
             {filteredProjects.slice(0, 2).map((project, index) => (
-              <Grid item  size={{ xs: 12, sm: 12, md: 12 }}  key={`case-${project.id}`}>
+              <Grid item size={{ xs: 12, sm: 12, md: 12 }} key={`case-${project.id}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -470,9 +454,9 @@ export default function PortfolioPage() {
                           <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 700 }}>
                             {project.title}: {project.subtitle}
                           </Typography>
-                          
+
                           <Divider sx={{ mb: 3 }} />
-                          
+
                           <Box sx={{ mb: 4 }}>
                             <Typography variant="h6" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
                               Challenge
@@ -480,14 +464,14 @@ export default function PortfolioPage() {
                             <Typography variant="body1" sx={{ mb: 3 }}>
                               {project.challenge}
                             </Typography>
-                            
+
                             <Typography variant="h6" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
                               Solution
                             </Typography>
                             <Typography variant="body1" sx={{ mb: 3 }}>
                               {project.solution}
                             </Typography>
-                            
+
                             <Typography variant="h6" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
                               Results
                             </Typography>
@@ -501,7 +485,7 @@ export default function PortfolioPage() {
                               ))}
                             </Box>
                           </Box>
-                          
+
                           <Button
                             variant="contained"
                             color="primary"
@@ -513,7 +497,7 @@ export default function PortfolioPage() {
                             View Full Case Study
                           </Button>
                         </Grid>
-                        
+
                         <Grid item xs={12} md={4}>
                           <Box
                             sx={{
@@ -533,7 +517,7 @@ export default function PortfolioPage() {
                               ))}
                             </Box>
                           </Box>
-                          
+
                           <Card sx={{ p: 3, bgcolor: 'rgba(37, 99, 235, 0.05)' }}>
                             <Typography
                               variant="body1"
@@ -541,15 +525,7 @@ export default function PortfolioPage() {
                                 mb: 2,
                                 fontStyle: 'italic',
                                 position: 'relative',
-                                pl: 2,
-                                '&::before': {
-                                  content: '"""',
-                                  position: 'absolute',
-                                  left: -5,
-                                  top: -10,
-                                  fontSize: '2rem',
-                                  color: theme.palette.primary.main,
-                                },
+
                               }}
                             >
                               {project.testimonial.quote}
@@ -571,10 +547,10 @@ export default function PortfolioPage() {
           </Grid>
         </Container>
       </Box>
-      
+
       {/* Our Process */}
-      <Box 
-        sx={{ 
+      <Box
+        sx={{
           py: { xs: 8, md: 12 },
           backgroundColor: theme.palette.background.dark,
           color: theme.palette.text.white,
@@ -595,14 +571,14 @@ export default function PortfolioPage() {
             zIndex: 0,
           }}
         />
-        
+
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <SectionTitle
             title="Our Project Approach"
             subtitle="We follow a proven methodology to ensure every project is delivered on time, within budget, and exceeds expectations."
             color="light"
           />
-          
+
           <Grid container spacing={4}>
             {[
               { number: '01', title: 'Discovery', description: 'We begin by understanding your business, goals, and challenges through in-depth discussions and research.' },
@@ -612,7 +588,7 @@ export default function PortfolioPage() {
               { number: '05', title: 'Testing', description: 'Rigorous testing ensures your solution works flawlessly across all devices and scenarios.' },
               { number: '06', title: 'Launch & Support', description: 'We handle the deployment process and provide ongoing support to ensure continued success.' },
             ].map((step, index) => (
-              <Grid item  size={{ xs: 12, sm: 6, md: 4 }}  key={index}>
+              <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={index}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -658,7 +634,7 @@ export default function PortfolioPage() {
                         {step.number}
                       </Typography>
                     </Box>
-                    
+
                     <CardContent sx={{ pt: 5, px: 3, pb: 3 }}>
                       <Typography
                         variant="h5"
@@ -687,9 +663,9 @@ export default function PortfolioPage() {
           </Grid>
         </Container>
       </Box>
-      
+
       {/* Call to Action */}
-      <CtaSection 
+      <CtaSection
         title="Ready to Start Your Project?"
         description="Contact us today to discuss how we can bring your vision to life with our expertise in digital solutions."
         buttonText="Get in Touch"

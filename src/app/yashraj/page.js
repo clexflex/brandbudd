@@ -14,26 +14,46 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DownloadIcon from '@mui/icons-material/Download';
+import CardMembershipIcon from '@mui/icons-material/CardMembership';
 
 export default function ResumePage() {
     const theme = useTheme();
-
+    const handleDownloadResume = () => {
+        const link = document.createElement('a');
+        link.href = '/Yashraj_Resume.pdf';
+        link.download = 'Yashraj_Ghosalkar_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
     const skills = [
         {
-            category: 'Frontend Development',
-            items: ['React', 'Next.js', 'JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3', 'Material UI', 'Framer Motion', 'Tailwind CSS']
+            category: 'Programming Languages',
+            items: ['JavaScript (ES6+)', 'TypeScript', 'Python', 'PHP', 'SQL', 'HTML5', 'CSS3', 'C++']
         },
         {
-            category: 'Backend Development',
-            items: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'RESTful APIs', 'GraphQL', 'Firebase']
+            category: 'Core Competencies',
+            items: ['Data Structures', 'Algorithms', 'Dynamic Programming', 'Greedy Algorithms', 'Problem Solving']
         },
         {
-            category: 'Tools & Workflow',
-            items: ['Git', 'GitHub', 'VS Code', 'npm/Yarn', 'Webpack', 'Docker', 'Vercel', 'Render']
+            category: 'Frameworks / Libraries',
+            items: ['React.js', 'Redux', 'Node.js', 'Express.js', 'Bootstrap', 'jQuery']
         },
         {
-            category: 'Digital Marketing',
-            items: ['SEO', 'Content Marketing', 'Google Analytics', 'Email Marketing', 'Social Media Marketing']
+            category: 'Database Technologies',
+            items: ['MySQL', 'MongoDB', 'PostgreSQL']
+        },
+        {
+            category: 'Tools / Platforms',
+            items: ['Git', 'Docker', 'Kubernetes', 'Webpack', 'Babel', 'Postman']
+        },
+        {
+            category: 'Web Development',
+            items: ['Front-End Development', 'Responsive Design', 'Web Applications', 'UI/UX Principles']
+        },
+        {
+            category: 'Other Skills',
+            items: ['Responsive Design', 'REST APIs', 'Agile Development', 'Cross-Browser Compatibility', 'Testing with Cypress and Jest']
         },
     ];
 
@@ -42,7 +62,7 @@ export default function ResumePage() {
             company: 'BrandBudd',
             position: 'Founder & Lead Developer',
             period: '2023 - Present',
-            location: 'New York, NY',
+            location: 'India',
             description: [
                 'Founded and lead a digital marketing and software development agency specializing in web development and custom software solutions.',
                 'Developed TeamSync, a comprehensive employee management system with attendance tracking, leave management, and payroll processing.',
@@ -52,45 +72,121 @@ export default function ResumePage() {
             ],
         },
         {
-            company: 'TechInnovate Solutions',
-            position: 'Senior Web Developer',
-            period: '2020 - 2023',
-            location: 'San Francisco, CA',
+            company: 'Maximize Market Research Pvt. Ltd.',
+            position: 'Web Developer',
+            period: 'Jun 2024 - Present',
+            location: 'Pune, India',
             description: [
-                'Led development of responsive, performant web applications using React, Node.js, and MongoDB.',
-                'Implemented CI/CD pipelines using GitHub Actions, improving deployment efficiency by 40%.',
-                'Optimized application performance, reducing load times by 60% through code splitting and lazy loading.',
-                'Mentored junior developers and conducted code reviews to ensure high quality standards.',
-                'Collaborated with design and marketing teams to create seamless user experiences.',
+                'Developed dynamic web applications using React.js, Node.js, and REST APIs, ensuring high performance and scalability.',
+                'Enhanced website responsiveness and usability across devices, optimizing the user experience.',
+                'Worked closely with cross-functional teams including designers and backend developers to deliver end-to-end solutions.',
             ],
         },
         {
-            company: 'Digital Growth Partners',
-            position: 'Web Developer & Digital Marketing Specialist',
-            period: '2018 - 2020',
-            location: 'Chicago, IL',
+            company: 'Zeetron Networks Pvt. Ltd.',
+            position: 'Research Engineer Trainee',
+            period: 'Jan 2024 - May 2024',
+            location: 'Jaipur, India',
             description: [
-                'Developed custom WordPress themes and plugins for clients across various industries.',
-                'Implemented SEO best practices, resulting in first-page rankings for targeted keywords.',
-                'Created and executed content marketing strategies, increasing client traffic by an average of 75%.',
-                'Managed social media campaigns across multiple platforms, achieving 2-3x engagement rates.',
-                'Utilized Google Analytics to track performance and optimize marketing strategies.',
+                'Developed interactive data visualization tools using React.js and integrated APIs for real-time data updates.',
+                'Collaborated with backend teams to integrate and debug RESTful APIs, ensuring seamless communication.',
+            ],
+        },
+        {
+            company: 'Freelance Projects',
+            position: 'Full Stack Developer',
+            period: 'Jul 2022 - Present',
+            location: 'Remote',
+            description: [
+                'Built a full-stack e-commerce application with dynamic product listings, cart management, and secure user authentication using MERN stack.',
+                'Developed a personal portfolio website showcasing projects, leveraging React.js and Bootstrap for responsive design.',
             ],
         },
     ];
 
     const education = [
         {
-            institution: 'University of California, Berkeley',
-            degree: 'Bachelor of Science in Computer Science',
-            period: '2014 - 2018',
-            description: 'Focused on web development, algorithms, and software engineering. Graduated with honors.',
+            institution: 'Manipal University Jaipur',
+            degree: 'B.Tech. in Computer Science and Engineering',
+            period: 'Aug 2020 - May 2024',
+            description: 'Focused on web development, algorithms, and software engineering. CGPA: 7.77/10',
         },
         {
-            institution: 'Digital Marketing Institute',
-            degree: 'Professional Diploma in Digital Marketing',
-            period: '2019',
-            description: 'Comprehensive training in SEO, content marketing, social media, and digital strategy.',
+            institution: 'Government Polytechnic Kolhapur',
+            degree: 'Diploma in Information Technology',
+            period: '2018 - 2021',
+            description: 'Comprehensive training in information technology fundamentals. Percentage: 93.56%',
+        },
+        {
+            institution: 'Shrimant Maisaheb Bavdekar School, Kolhapur',
+            degree: 'Secondary School Certificate (SSC)',
+            period: '2012 - 2018',
+            description: 'Percentage: 94%',
+        },
+    ];
+
+    const certifications = [
+        {
+            title: 'Full-Stack Web Development',
+            issuer: 'Udemy',
+            description: 'Comprehensive full-stack web development certification covering MERN stack and modern web technologies.',
+        },
+        {
+            title: 'Front-End Development with React.js',
+            issuer: 'Coursera',
+            description: 'Specialized certification in React.js development, including hooks, context API, and advanced patterns.',
+        },
+        {
+            title: 'Certified Kubernetes Application Developer (CKAD)',
+            issuer: 'Cloud Native Computing Foundation',
+            description: 'Professional certification demonstrating expertise in Kubernetes application development and container orchestration.',
+        }, {
+            title: 'Mastering Data Structures & Algorithms',
+            issuer: 'Udemy',
+            date: 'October 2023',
+            description: 'Advanced course covering complex data structures and algorithmic problem-solving techniques.',
+        },
+        {
+            title: 'Introduction to Front-End Development',
+            issuer: 'Coursera',
+            date: 'December 2022',
+            description: 'Comprehensive introduction to modern front-end development practices and frameworks.',
+        },
+        {
+            title: 'Dynamic Programming and Greedy Algorithms',
+            issuer: 'Coursera',
+            date: 'November 2022',
+            description: 'Specialized course focusing on advanced algorithmic paradigms for optimal problem solving.',
+        },
+        {
+            title: 'HTML, CSS, and Javascript for Web Developers',
+            issuer: 'Coursera',
+            date: 'November 2022',
+            description: 'In-depth coverage of core web technologies and best practices for modern web development.',
+        },
+        {
+            title: 'Introduction to Web Development with HTML, CSS, JavaScript',
+            issuer: 'Coursera',
+            date: 'September 2022',
+            description: 'Foundation course covering essential web development technologies and concepts.',
+        },
+        {
+            title: 'Wireshark for Basic Network Security Analysis',
+            issuer: 'Coursera',
+            date: 'November 2022',
+            description: 'Network analysis and security fundamentals using industry-standard Wireshark tools.',
+        },
+        {
+            title: 'C Course',
+            issuer: 'Solo Learn',
+            date: 'May 2022',
+            description: 'Comprehensive C programming course covering fundamentals to advanced concepts.',
+        },
+        {
+            title: 'Database Programming with SQL',
+            issuer: 'Oracle',
+            date: 'April 2022',
+            description: 'Official Oracle certification in SQL programming and database management.',
         },
     ];
 
@@ -117,10 +213,23 @@ export default function ResumePage() {
 
     return (
         <Box component="div" sx={{ py: { xs: 10, md: 12 } }}>
+            <Box
+                sx={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '80px',
+                    background: theme.palette.background.dark,
+                    zIndex: theme.zIndex.drawer - 1,
+                    pointerEvents: 'none'
+                }}
+            />
+
             <Container maxWidth="lg">
                 <Grid container spacing={4}>
                     {/* Header / Profile Section */}
-                    <Grid item  size={{ xs: 12 }} >
+                    <Grid item size={{ xs: 12 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -141,6 +250,8 @@ export default function ResumePage() {
                                 }}
                             >
                                 <Avatar
+                                    src="/images/team/yashraj1.png"
+                                    alt="Yashraj Ghosalkar"
                                     sx={{
                                         width: { xs: 120, sm: 150 },
                                         height: { xs: 120, sm: 150 },
@@ -153,54 +264,54 @@ export default function ResumePage() {
 
                                 <Box sx={{ flex: 1 }}>
                                     <Typography variant="h2" component="h1" sx={{ mb: 1, fontWeight: 700 }}>
-                                        Yashraj Ghosalkar
+                                        Yashraj Dagadu Ghosalkar
                                     </Typography>
 
                                     <Typography variant="h5" component="h2" color="primary" sx={{ mb: 2, fontWeight: 500 }}>
-                                        Full Stack Developer & Digital Marketing Specialist
+                                        Full Stack Web Developer
                                     </Typography>
 
                                     <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 700 }}>
-                                        Experienced developer and digital marketing specialist with 5+ years of expertise building web applications and digital strategies. Passionate about creating intuitive digital experiences that solve real business problems.
+                                        Full Stack Web Developer with a passion for building scalable and efficient applications. Skilled in both front-end and back-end technologies, I bring a collaborative and problem-solving approach to software engineering. Seeking to contribute to innovative projects and deliver exceptional user experiences.
                                     </Typography>
 
                                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 3 }}>
                                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                             <EmailIcon color="primary" sx={{ mr: 1, fontSize: 20 }} />
                                             <Typography variant="body2">
-                                                yashraj@brandbudd.com
+                                                yashrajjghosalkar@gmail.com
                                             </Typography>
                                         </Box>
 
                                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                             <PhoneIcon color="primary" sx={{ mr: 1, fontSize: 20 }} />
                                             <Typography variant="body2">
-                                                (555) 123-4567
+                                                +91 8010881394
                                             </Typography>
                                         </Box>
-
-                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                            <LinkedInIcon color="primary" sx={{ mr: 1, fontSize: 20 }} />
-                                            <Typography variant="body2">
-                                                linkedin.com/in/yashraj
-                                            </Typography>
-                                        </Box>
-
-                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                            <GitHubIcon color="primary" sx={{ mr: 1, fontSize: 20 }} />
-                                            <Typography variant="body2">
-                                                github.com/yashraj
-                                            </Typography>
-                                        </Box>
+                                        <a href={"https://www.linkedin.com/in/yashrajghosalkar/"} target="_blank" rel="noopener noreferrer">
+                                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                                <LinkedInIcon color="primary" sx={{ mr: 1, fontSize: 20 }} />
+                                                <Typography variant="body2">
+                                                    linkedin.com/in/yashrajghosalkar
+                                                </Typography>
+                                            </Box>
+                                        </a>
+                                        <a href={"https://github.com/clexflex/"} target="_blank" rel="noopener noreferrer">
+                                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                                <GitHubIcon color="primary" sx={{ mr: 1, fontSize: 20 }} />
+                                                <Typography variant="body2">
+                                                    github.com/clexflex
+                                                </Typography>
+                                            </Box>
+                                        </a>
                                     </Box>
 
                                     <Button
                                         variant="contained"
                                         color="primary"
                                         startIcon={<DownloadIcon />}
-                                        href="/yashraj-resume.pdf"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        onClick={handleDownloadResume}
                                     >
                                         Download Resume
                                     </Button>
@@ -210,7 +321,7 @@ export default function ResumePage() {
                     </Grid>
 
                     {/* Skills Section */}
-                    <Grid item  size={{ xs: 12, md: 6 }} >
+                    <Grid item size={{ xs: 12, md: 6 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -260,7 +371,7 @@ export default function ResumePage() {
                     </Grid>
 
                     {/* Projects Section */}
-                    <Grid item  size={{ xs: 12, md: 6 }} >
+                    <Grid item size={{ xs: 12, md: 6 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -332,7 +443,7 @@ export default function ResumePage() {
                     </Grid>
 
                     {/* Experience Section */}
-                    <Grid item  size={{ xs: 12 }} >
+                    <Grid item size={{ xs: 12 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -400,7 +511,7 @@ export default function ResumePage() {
                     </Grid>
 
                     {/* Education Section */}
-                    <Grid item size={{ xs: 12}} >
+                    <Grid item size={{ xs: 12 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -457,13 +568,73 @@ export default function ResumePage() {
                         </Box>
                     </Grid>
 
-                    {/* CTA - Contact Section */}
-                    <Grid >
+                    {/* Certifications Section */}
+                    <Grid item size={{ xs: 12 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.5 }}
+                        >
+                            <Paper
+                                elevation={0}
+                                sx={{
+                                    p: { xs: 3, md: 4 },
+                                    borderRadius: 3,
+                                    border: `1px solid ${theme.palette.divider}`,
+                                }}
+                            >
+                                <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                                    <CardMembershipIcon color="primary" sx={{ mr: 2, fontSize: 28 }} />
+                                    <Typography variant="h4" component="h2" sx={{ fontWeight: 600 }}>
+                                        Certifications
+                                    </Typography>
+                                </Box>
+
+                                <Grid container spacing={3}>
+                                    {certifications.map((cert, index) => (
+                                        <Grid item size={{ xs: 12 }} key={index}>
+                                            <Card
+                                                sx={{
+                                                    height: '100%',
+                                                    boxShadow: 'none',
+                                                    border: `1px solid ${theme.palette.divider}`,
+                                                    borderRadius: 2,
+                                                    transition: 'transform 0.3s, box-shadow 0.3s',
+                                                    '&:hover': {
+                                                        transform: 'translateY(-4px)',
+                                                        boxShadow: '0 6px 12px rgba(0,0,0,0.1)',
+                                                    },
+                                                }}
+                                            >
+                                                <CardContent sx={{ p: 3 }}>
+                                                    <Typography variant="h6" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
+                                                        {cert.title}
+                                                    </Typography>
+
+                                                    <Typography variant="subtitle2" color="primary" sx={{ mb: 2 }}>
+                                                        {cert.issuer}
+                                                    </Typography>
+
+                                                    <Typography variant="body2" color="text.secondary">
+                                                        {cert.description}
+                                                    </Typography>
+                                                </CardContent>
+                                            </Card>
+                                        </Grid>
+                                    ))}
+                                </Grid>
+                            </Paper>
+                        </Box>
+                    </Grid>
+
+                    {/* CTA - Contact Section */}
+                    <Grid item size={{ xs: 12 }}>
+                        <Box
+                            component={motion.div}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
                         >
                             <Paper
                                 elevation={0}

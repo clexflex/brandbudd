@@ -12,6 +12,8 @@ import SpeedIcon from '@mui/icons-material/Speed';
 import SecurityIcon from '@mui/icons-material/Security';
 import SupportIcon from '@mui/icons-material/Support';
 import CodeIcon from '@mui/icons-material/Code';
+import Link from 'next/link';
+import LottieAnimation from '@/components/common/LottieAnimation';
 
 export default function AboutPage() {
     const theme = useTheme();
@@ -20,26 +22,16 @@ export default function AboutPage() {
         {
             name: 'Yashraj Ghosalkar',
             position: 'Founder & Lead Developer',
-            avatar: '/images/team/yashraj.jpg',
+            avatar: '/images/team/yashraj1.png',
             bio: 'Experienced full-stack developer specializing in React, Node.js, and MongoDB. Passionate about creating innovative digital solutions that solve real business problems.',
+            url: '/yashraj',
         },
         {
-            name: 'Sarah Wilson',
-            position: 'Digital Marketing Specialist',
-            avatar: '/images/team/sarah.jpg',
-            bio: 'With over 7 years of experience in digital marketing, Sarah brings expertise in SEO, content strategy, and social media marketing to deliver exceptional results for clients.',
-        },
-        {
-            name: 'Michael Chen',
-            position: 'UI/UX Designer',
-            avatar: '/images/team/michael.jpg',
-            bio: 'Award-winning designer focused on creating intuitive, engaging user experiences. Combines aesthetics with functionality to deliver exceptional digital experiences.',
-        },
-        {
-            name: 'Emily Rodriguez',
-            position: 'Project Manager',
-            avatar: '/images/team/emily.jpg',
-            bio: 'Certified project manager with a track record of delivering complex web and software projects on time and within budget while exceeding client expectations.',
+            name: 'Sparsh Prajapati ',
+            position: 'Co-Founder & Lead Developer',
+            avatar: '/images/team/sparsh1.png',
+            bio: 'Software Developer with a robust technical foundation, proficient in Java, web technologies (JavaScript, Angular, Spring Boot, Microservices, .NET), back-end development (Node.js, Express.js), and databases (MySQL, MongoDB). Equipped with strong academic credentials and practical experience in software development, project management, and collaborative teamwork. Skilled in Git version control, committed to continuous learning, and enthusiastic about leveraging technical expertise to drive innovative technological solutions in the rapidly evolving computer science landscape',
+            url: '/sparsh',
         },
     ];
 
@@ -145,7 +137,7 @@ export default function AboutPage() {
             <Box sx={{ py: { xs: 8, md: 12 } }}>
                 <Container maxWidth="lg">
                     <Grid container spacing={6} alignItems="center">
-                        <Grid item xs={12} md={6}>
+                        <Grid item size={{ xs: 12, md: 6 }}>
                             <motion.div
                                 initial={{ opacity: 0, x: -30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
@@ -181,7 +173,7 @@ export default function AboutPage() {
                             </motion.div>
                         </Grid>
 
-                        <Grid item xs={12} md={6}>
+                        <Grid item size={{ xs: 12, md: 6 }}>
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
@@ -191,31 +183,16 @@ export default function AboutPage() {
                                 <Box
                                     sx={{
                                         position: 'relative',
-                                        height: { xs: '300px', sm: '400px', md: '450px' },
+                                        height: { xs: '300px', sm: '400px', md: '100%' },
                                         width: '100%',
                                         borderRadius: 4,
                                         overflow: 'hidden',
-                                        boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
                                     }}
                                 >
-                                    {/* Placeholder for about image - replace with actual image in production */}
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            top: 0,
-                                            left: 0,
-                                            right: 0,
-                                            bottom: 0,
-                                            background: `linear-gradient(135deg, ${theme.palette.primary.light} 0%, ${theme.palette.secondary.light} 100%)`,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                        }}
-                                    >
-                                        <Typography variant="h5" align="center" sx={{ px: 3, color: 'white' }}>
-                                            BrandBudd Team Image
-                                        </Typography>
-                                    </Box>
+                                    <LottieAnimation
+                                        src="/animations/team-work.lottie"  // or "/animations/why-choose-us.json"
+                                        alt="Team collaboration animation"
+                                    />
                                 </Box>
                             </motion.div>
                         </Grid>
@@ -238,7 +215,7 @@ export default function AboutPage() {
 
                     <Grid container spacing={4}>
                         {values.map((value, index) => (
-                            <Grid item size={{ xs: 12, sm: 12 }} key={index}>
+                            <Grid item size={{ xs: 12, sm: 4 }} key={index}>
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -419,76 +396,80 @@ export default function AboutPage() {
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     viewport={{ once: true }}
                                 >
-                                    <Card
-                                        sx={{
-                                            height: '100%',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            alignItems: 'center',
-                                            textAlign: 'center',
-                                            borderRadius: 3,
-                                            overflow: 'hidden',
-                                            transition: 'transform 0.3s, box-shadow 0.3s',
-                                            '&:hover': {
-                                                transform: 'translateY(-8px)',
-                                                boxShadow: '0 12px 20px rgba(0,0,0,0.1)',
-                                            },
-                                        }}
-                                    >
-                                        <Box
+                                    <Link href={member.url} style={{ textDecoration: 'none' }}>
+                                        <Card
                                             sx={{
-                                                width: '100%',
-                                                pt: 4,
+                                                height: '100%',
                                                 display: 'flex',
-                                                justifyContent: 'center',
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                textAlign: 'center',
+                                                borderRadius: 3,
+                                                overflow: 'hidden',
+                                                transition: 'transform 0.3s, box-shadow 0.3s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-8px)',
+                                                    boxShadow: '0 12px 20px rgba(0,0,0,0.1)',
+                                                },
                                             }}
                                         >
-                                            <Avatar
+                                            <Box
                                                 sx={{
-                                                    width: 120,
-                                                    height: 120,
-                                                    backgroundColor: theme.palette.primary.main,
-                                                    fontSize: '3rem',
+                                                    width: '100%',
+                                                    pt: 4,
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
                                                 }}
                                             >
-                                                {member.name.charAt(0)}
-                                            </Avatar>
-                                        </Box>
+                                                <Avatar
+                                                    src={member.avatar}
+                                                    alt={member.name}
+                                                    sx={{
+                                                        width: 120,
+                                                        height: 120,
+                                                        backgroundColor: theme.palette.primary.main,
+                                                        fontSize: '3rem',
+                                                    }}
+                                                >
+                                                    {member.name.charAt(0)}
+                                                </Avatar>
+                                            </Box>
 
-                                        <CardContent>
-                                            <Typography
-                                                variant="h5"
-                                                component="h3"
-                                                sx={{
-                                                    mt: 1,
-                                                    mb: 0.5,
-                                                    fontWeight: 600,
-                                                }}
-                                            >
-                                                {member.name}
-                                            </Typography>
+                                            <CardContent>
+                                                <Typography
+                                                    variant="h5"
+                                                    component="h3"
+                                                    sx={{
+                                                        mt: 1,
+                                                        mb: 0.5,
+                                                        fontWeight: 600,
+                                                    }}
+                                                >
+                                                    {member.name}
+                                                </Typography>
 
-                                            <Typography
-                                                variant="subtitle1"
-                                                color="primary"
-                                                sx={{
-                                                    mb: 2,
-                                                    fontWeight: 500,
-                                                }}
-                                            >
-                                                {member.position}
-                                            </Typography>
+                                                <Typography
+                                                    variant="subtitle1"
+                                                    color="primary"
+                                                    sx={{
+                                                        mb: 2,
+                                                        fontWeight: 500,
+                                                    }}
+                                                >
+                                                    {member.position}
+                                                </Typography>
 
-                                            <Divider sx={{ mb: 2 }} />
+                                                <Divider sx={{ mb: 2 }} />
 
-                                            <Typography
-                                                variant="body2"
-                                                color="text.secondary"
-                                            >
-                                                {member.bio}
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
+                                                <Typography
+                                                    variant="body2"
+                                                    color="text.secondary"
+                                                >
+                                                    {member.bio}
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Link>
                                 </motion.div>
                             </Grid>
                         ))}
@@ -500,7 +481,7 @@ export default function AboutPage() {
             <Box sx={{ py: { xs: 8, md: 12 } }}>
                 <Container maxWidth="lg">
                     <Grid container spacing={6} alignItems="center">
-                        <Grid item xs={12} md={6}>
+                        <Grid item  size={{ xs: 12, md: 6 }} >
                             <motion.div
                                 initial={{ opacity: 0, x: -30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
@@ -560,41 +541,26 @@ export default function AboutPage() {
                             </motion.div>
                         </Grid>
 
-                        <Grid item xs={12} md={6}>
+                        <Grid item  size={{ xs: 12, md: 6 }}>
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.7 }}
                                 viewport={{ once: true }}
                             >
-                                <Box
+                               <Box
                                     sx={{
                                         position: 'relative',
-                                        height: { xs: '300px', sm: '400px', md: '500px' },
+                                        height: { xs: '300px', sm: '400px', md: '100%' },
                                         width: '100%',
                                         borderRadius: 4,
                                         overflow: 'hidden',
-                                        boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
                                     }}
                                 >
-                                    {/* Placeholder for image - replace with actual image in production */}
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            top: 0,
-                                            left: 0,
-                                            right: 0,
-                                            bottom: 0,
-                                            background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                        }}
-                                    >
-                                        <Typography variant="h5" align="center" sx={{ px: 3, color: 'white' }}>
-                                            Why Choose Us Image
-                                        </Typography>
-                                    </Box>
+                                    <LottieAnimation
+                                        src="/animations/why-choose-us.lottie"
+                                        alt="Team collaboration animation"
+                                    />
                                 </Box>
                             </motion.div>
                         </Grid>
