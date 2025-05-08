@@ -52,7 +52,7 @@ export default function LoveCountdown() {
     }, 10); // Update more frequently for milliseconds
 
     return () => clearInterval(timer);
-  }, [isMounted]);
+  }, [isMounted, calculateTimeLeft]); // Added calculateTimeLeft to the dependency array
 
   const heartbeatVariants = {
     beat: {
@@ -71,9 +71,24 @@ export default function LoveCountdown() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const timeDigits = { fontSize: { xs: '2.5rem', md: '3.5rem' }, fontWeight: 700, fontFamily: "'Playfair Display', serif" };
-  const timeLabels = { fontSize: { xs: '0.9rem', md: '1.1rem' }, color: 'rgba(255, 255, 255, 0.8)', textTransform: 'uppercase', letterSpacing: 2 };
-  const msDigits = { fontSize: { xs: '1.5rem', md: '2rem' }, fontWeight: 600, fontFamily: "'Playfair Display', serif" };
+  const timeDigits = { 
+    fontSize: { xs: '2.5rem', md: '3.5rem' }, 
+    fontWeight: 700, 
+    fontFamily: 'var(--font-playfair)'
+  };
+  
+  const timeLabels = { 
+    fontSize: { xs: '0.9rem', md: '1.1rem' }, 
+    color: 'rgba(255, 255, 255, 0.8)', 
+    textTransform: 'uppercase', 
+    letterSpacing: 2 
+  };
+  
+  const msDigits = { 
+    fontSize: { xs: '1.5rem', md: '2rem' }, 
+    fontWeight: 600, 
+    fontFamily: 'var(--font-playfair)'
+  };
   
   // Background gradient with a romantic feel
   const bgGradient = `linear-gradient(135deg, 
@@ -137,7 +152,7 @@ export default function LoveCountdown() {
                   color: '#fff',
                   fontWeight: 700,
                   mb: 1,
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: 'var(--font-playfair)',
                   textShadow: '0 2px 10px rgba(0,0,0,0.2)',
                   fontSize: { xs: '2rem', md: '3rem' },
                 }}
@@ -151,7 +166,7 @@ export default function LoveCountdown() {
                   color: 'rgba(255, 255, 255, 0.85)',
                   fontWeight: 400,
                   mb: 4,
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: 'var(--font-lato)',
                   maxWidth: '800px',
                   mx: 'auto',
                 }}
@@ -181,7 +196,7 @@ export default function LoveCountdown() {
               >
                 <Grid container spacing={2} justifyContent="center">
                   {/* Days */}
-                  <Grid item xs={6} sm={3}>
+                  <Grid item size={{ xs: 6, sm: 3 }}>
                     <Box 
                       sx={{ 
                         textAlign: 'center',
@@ -204,7 +219,7 @@ export default function LoveCountdown() {
                   </Grid>
                   
                   {/* Hours */}
-                  <Grid item xs={6} sm={3}>
+                  <Grid item size={{ xs: 6, sm: 3 }}>
                     <Box 
                       sx={{ 
                         textAlign: 'center',
@@ -227,7 +242,7 @@ export default function LoveCountdown() {
                   </Grid>
                   
                   {/* Minutes */}
-                  <Grid item xs={6} sm={3}>
+                  <Grid item size={{ xs: 6, sm: 3 }}>
                     <Box 
                       sx={{ 
                         textAlign: 'center',
@@ -250,7 +265,7 @@ export default function LoveCountdown() {
                   </Grid>
                   
                   {/* Seconds */}
-                  <Grid item xs={6} sm={3}>
+                  <Grid item size={{ xs: 6, sm: 3 }}>
                     <Box 
                       sx={{ 
                         textAlign: 'center',
@@ -271,24 +286,24 @@ export default function LoveCountdown() {
                       </Typography>
                     </Box>
                   </Grid>
-                <Grid item xs={6} sm={3}>
+                <Grid item size={{ xs: 6, sm: 3 }}>
                 {/* Milliseconds in a special format below */}
                 <Box 
                   sx={{ 
                     textAlign: 'center',
-                        p: 2,
-                        borderRadius: 3,
-                        background: 'rgba(255, 255, 255, 0.1)',
-                        height: '100%',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
+                    p: 2,
+                    borderRadius: 3,
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
                   }}
                 >
                   <Typography variant="h2" color="white" sx={msDigits}>
                     {String(timeLeft.milliseconds || 0).padStart(2, '0')}
                   </Typography>
-                  <Typography variant="body1" sx={timeLabels}>
+                  <Typography variant="body1" sx={{...timeLabels}}>
                     Centiseconds
                   </Typography>
                 </Box>
@@ -325,7 +340,7 @@ export default function LoveCountdown() {
                 sx={{ 
                   textAlign: 'center',
                   color: 'white',
-                  fontFamily: "'Dancing Script', cursive",
+                  fontFamily: 'var(--font-dancing)',
                   fontSize: { xs: '1.6rem', md: '2rem' },
                   maxWidth: '600px',
                   mx: 'auto',
@@ -333,7 +348,7 @@ export default function LoveCountdown() {
                   textShadow: '0 2px 10px rgba(0,0,0,0.2)',
                 }}
               >
-                "Every moment brings us closer to when our hearts reunite..."
+                &ldquo;Every moment brings us closer to when our hearts reunite...&rdquo;
               </Typography>
             </motion.div>
           </Grid>
