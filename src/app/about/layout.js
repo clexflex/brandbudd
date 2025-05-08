@@ -1,8 +1,28 @@
-export const metadata = {
+import { generateMetadata } from '@/utils/metadata';
+
+export const metadata = generateMetadata({
     title: 'About Us - BrandBudd | Digital Marketing & Software Development Agency',
-    description: 'Learn about BrandBudd, our mission, values, expertise, and the team behind our digital marketing and software development solutions.',
-    keywords: 'about us, digital marketing agency, web development team, company history, agency values, tech expertise',
-};
+    description: 'BrandBudd is a global digital agency founded in 2023, providing expert digital marketing, web development, and software solutions worldwide with roots in India. We serve clients in English, Hindi, and Marathi.',
+    keywords: [
+      'digital marketing agency history',
+      'web development company values',
+      'software development team',
+      'BrandBudd founders',
+      'digital agency expertise',
+      'Pune digital agency team',
+      'Mumbai web development professionals',
+      'Kolhapur software developers',
+      'Marathi-speaking digital experts',
+      'global digital agency with Indian roots',
+      'India-based international agency',
+      'remote digital services',
+      'multilingual digital consultancy',
+      'digital transformation specialists',
+      'client-centered agency approach'
+    ],
+    path: '/about',
+    ogImage: '/animations/team-work.lottie'
+});
 
 export default function AboutLayout({ children }) {
     return children;

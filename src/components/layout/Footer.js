@@ -35,7 +35,7 @@ const Footer = () => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={6}>
-          <Grid item xs={12} md={4}>
+          <Grid  size={{ xs: 12, md: 4 }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +106,7 @@ const Footer = () => {
             </motion.div>
           </Grid>
 
-          <Grid item xs={6} sm={3} md={2}>
+          <Grid  size={{ xs: 6,sm:3, md: 2 }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -142,7 +142,7 @@ const Footer = () => {
             </motion.div>
           </Grid>
 
-          <Grid item xs={6} sm={3} md={2}>
+          <Grid  size={{ xs: 6,sm:3, md: 2 }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -183,7 +183,7 @@ const Footer = () => {
             </motion.div>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid  size={{ xs: 12,sm:6, md: 4 }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -241,12 +241,12 @@ const Footer = () => {
         <Divider sx={{ my: 4, backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
 
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid  size={{ xs: 12,md: 6 }}>
             <Typography variant="body2" color="text.light">
               © {currentYear} BrandBudd. All rights reserved.
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid  size={{ xs: 12,md: 6 }}>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ justifyContent: { md: 'flex-end' } }}>
               <MuiLink
                 component={Link}
@@ -288,6 +288,62 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Container>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "BrandBudd",
+            "image": "https://brandbudd.com/images/hero/hero2.png",
+            "url": "https://brandbudd.com",
+            "telephone": "+918010881394",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Maharashtra",
+              "addressLocality": "Kolhapur",
+              "addressRegion": "Maharashtra",
+              "postalCode": "416003",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "16.7050",
+              "longitude": "74.2433"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "20:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday"],
+                "opens": "10:00",
+                "closes": "16:00"
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/brandbudd/",
+              "https://www.instagram.com/brand_budd",
+              "https://www.linkedin.com/company/brandbudd/"
+            ],
+            "areaServed": ["Worldwide", "India", "Maharashtra", "Pune", "Mumbai", "Kolhapur"],
+            "serviceArea": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "16.7050",
+                "longitude": "74.2433"
+              },
+              "geoRadius": "50000"
+            }
+          })
+        }}
+      />
     </Box>
   );
 };

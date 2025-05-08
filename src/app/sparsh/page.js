@@ -173,7 +173,7 @@ export default function SparshResumePage() {
             <Container maxWidth="lg">
                 <Grid container spacing={4}>
                     {/* Header / Profile Section */}
-                    <Grid item size={{ xs: 12 }}>
+                    <Grid size={{ xs: 12 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -249,7 +249,7 @@ export default function SparshResumePage() {
                     </Grid>
 
                     {/* Skills Section */}
-                    <Grid item size={{ xs: 12, md: 6 }}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -299,7 +299,7 @@ export default function SparshResumePage() {
                     </Grid>
 
                     {/* Projects Section */}
-                    <Grid item size={{ xs: 12, md: 6 }}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -371,7 +371,7 @@ export default function SparshResumePage() {
                     </Grid>
 
                     {/* Experience Section */}
-                    <Grid item size={{ xs: 12 }}>
+                    <Grid size={{ xs: 12 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -397,7 +397,7 @@ export default function SparshResumePage() {
                                     {experience.map((job, index) => (
                                         <Box key={index} sx={{ mb: index < experience.length - 1 ? 4 : 0 }}>
                                             <Grid container spacing={2}>
-                                                <Grid item xs={12} sm={4} md={3}>
+                                                <Grid  size={{ xs: 12,sm:4, md: 3 }}>
                                                     <Typography variant="subtitle1" fontWeight={500} color="primary">
                                                         {job.period}
                                                     </Typography>
@@ -406,7 +406,7 @@ export default function SparshResumePage() {
                                                     </Typography>
                                                 </Grid>
 
-                                                <Grid item xs={12} sm={8} md={9}>
+                                                <Grid  size={{ xs: 12,sm:8, md: 8 }}>
                                                     <Typography variant="h5" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
                                                         {job.position}
                                                     </Typography>
@@ -439,7 +439,7 @@ export default function SparshResumePage() {
                     </Grid>
 
                     {/* Education Section */}
-                    <Grid item size={{ xs: 12 }}>
+                    <Grid size={{ xs: 12 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -465,7 +465,7 @@ export default function SparshResumePage() {
                                     {education.map((edu, index) => (
                                         <Box key={index} sx={{ mb: index < education.length - 1 ? 4 : 0 }}>
                                             <Grid container spacing={2}>
-                                                <Grid item xs={12} sm={4} md={3}>
+                                                <Grid  size={{ xs: 12,sm:4, md: 3 }}>
                                                     <Typography variant="subtitle1" fontWeight={500} color="primary">
                                                         {edu.period}
                                                     </Typography>
@@ -474,7 +474,7 @@ export default function SparshResumePage() {
                                                     </Typography>
                                                 </Grid>
 
-                                                <Grid item xs={12} sm={8} md={9}>
+                                                <Grid  size={{ xs: 12,sm:8, md: 9 }}>
                                                     <Typography variant="h5" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
                                                         {edu.degree}
                                                     </Typography>
@@ -500,7 +500,7 @@ export default function SparshResumePage() {
                     </Grid>
 
                     {/* Certifications Section */}
-                    <Grid item size={{ xs: 12 }}>
+                    <Grid size={{ xs: 12 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}
@@ -524,7 +524,7 @@ export default function SparshResumePage() {
 
                                 <Grid container spacing={3}>
                                     {certifications.map((cert, index) => (
-                                        <Grid item size={{ xs: 12, md: 4 }} key={index}>
+                                        <Grid size={{ xs: 12, md: 4 }} key={index}>
                                             <Card
                                                 sx={{
                                                     height: '100%',
@@ -575,7 +575,7 @@ export default function SparshResumePage() {
                     </Grid>
 
                     {/* CTA - Contact Section */}
-                    <Grid item size={{ xs: 12 }}>
+                    <Grid size={{ xs: 12 }}>
                         <Box
                             component={motion.div}
                             initial={{ opacity: 0, y: 20 }}

@@ -18,13 +18,6 @@ import CodeIcon from '@mui/icons-material/Code';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ApiIcon from '@mui/icons-material/Api';
 
-// SEO Metadata
-export const Metadata = {
-  title: 'ExcelFlow360 - Excel Data Management Solution | BrandBudd',
-  description: 'ExcelFlow360 is a MERN stack web application designed to manage employee data with Excel file uploads, user management, and EOD status tracking.',
-  keywords: 'ExcelFlow360, Excel management, data processing, MERN stack, file upload, employee management',
-};
-
 export default function ExcelFlow360Page() {
   const theme = useTheme();
   const [tabValue, setTabValue] = useState(0);
@@ -229,7 +222,7 @@ export default function ExcelFlow360Page() {
 
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Grid container spacing={6} alignItems="center">
-            <Grid item size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -313,7 +306,7 @@ export default function ExcelFlow360Page() {
               </motion.div>
             </Grid>
 
-            <Grid item size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -356,7 +349,7 @@ export default function ExcelFlow360Page() {
 
           <Grid container spacing={6}>
             {stepByStepGuide.map((step, index) => (
-              <Grid item size={{ xs: 12 }} key={index}>
+              <Grid size={{ xs: 12 }} key={index}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -372,7 +365,7 @@ export default function ExcelFlow360Page() {
                   >
                     <Grid container>
                       {/* Step Information */}
-                      <Grid item size={{ xs: 12, md:5 }} order={{ xs: 2, md: index % 2 === 0 ? 1 : 2 }}>
+                      <Grid size={{ xs: 12, md:5 }} order={{ xs: 2, md: index % 2 === 0 ? 1 : 2 }}>
                         <Box
                           sx={{
                             p: { xs: 4, md: 6 },
@@ -411,7 +404,7 @@ export default function ExcelFlow360Page() {
                       </Grid>
 
                       {/* Step Image */}
-                      <Grid item  size={{ xs: 12, md:7 }} order={{ xs: 1, md: index % 2 === 0 ? 2 : 1 }}>
+                      <Grid  size={{ xs: 12, md:7 }} order={{ xs: 1, md: index % 2 === 0 ? 2 : 1 }}>
                         <Box
                           sx={{
                             position: 'relative',
@@ -449,7 +442,7 @@ export default function ExcelFlow360Page() {
 
           <Grid container spacing={4}>
             {features.map((feature, index) => (
-              <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -506,7 +499,7 @@ export default function ExcelFlow360Page() {
 
           <Grid container spacing={4} sx={{ mt: 2 }}>
             {pricingPlans.map((plan, index) => (
-              <Grid item size={{ xs: 12, md: 4 }} key={index}>
+              <Grid size={{ xs: 12, md: 4 }} key={index}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -645,7 +638,7 @@ export default function ExcelFlow360Page() {
 
           <Grid container spacing={4} sx={{ mt: 2 }}>
             {apiPricing.map((tier, index) => (
-              <Grid item size={{ xs: 12, md: 4 }} key={index}>
+              <Grid size={{ xs: 12, md: 4 }} key={index}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -770,7 +763,7 @@ export default function ExcelFlow360Page() {
           <Box role="tabpanel" hidden={tabValue !== 0}>
             {tabValue === 0 && (
               <Grid container spacing={6} alignItems="center">
-                <Grid item size={{ xs: 12, md: 6 }}  >
+                <Grid size={{ xs: 12, md: 6 }}  >
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -806,7 +799,7 @@ export default function ExcelFlow360Page() {
                   </motion.div>
                 </Grid>
 
-                <Grid item size={{ xs: 12, md: 6 }}  >
+                <Grid size={{ xs: 12, md: 6 }}  >
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -866,7 +859,7 @@ export default function ExcelFlow360Page() {
           <Box role="tabpanel" hidden={tabValue !== 1}>
             {tabValue === 1 && (
               <Grid container spacing={6} alignItems="center">
-                <Grid item size={{ xs: 12, md: 6 }}  >
+                <Grid size={{ xs: 12, md: 6 }}  >
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -902,7 +895,7 @@ export default function ExcelFlow360Page() {
                   </motion.div>
                 </Grid>
 
-                <Grid item size={{ xs: 12, md: 6 }}  >
+                <Grid size={{ xs: 12, md: 6 }}  >
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -971,7 +964,7 @@ module.exports = router;`}
           <Box role="tabpanel" hidden={tabValue !== 2}>
             {tabValue === 2 && (
               <Grid container spacing={6} alignItems="center">
-                <Grid item size={{ xs: 12, md: 6 }}  >
+                <Grid size={{ xs: 12, md: 6 }}  >
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -1007,7 +1000,7 @@ module.exports = router;`}
                   </motion.div>
                 </Grid>
 
-                <Grid item size={{ xs: 12, md: 6 }} >
+                <Grid size={{ xs: 12, md: 6 }} >
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -1083,7 +1076,7 @@ module.exports = mongoose.model('File', FileSchema);`}
           <Box role="tabpanel" hidden={tabValue !== 3}>
             {tabValue === 3 && (
               <Grid container spacing={6} alignItems="center">
-                <Grid item size={{ xs: 12, md: 6 }} >
+                <Grid size={{ xs: 12, md: 6 }} >
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -1119,7 +1112,7 @@ module.exports = mongoose.model('File', FileSchema);`}
                   </motion.div>
                 </Grid>
 
-                <Grid item size={{ xs: 12, md: 6 }} >
+                <Grid size={{ xs: 12, md: 6 }} >
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}

@@ -1,0 +1,10 @@
+# BrandBudd Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://brandbudd.com/sitemap.xml
+
+# Specific page rules
+Disallow: /api/
+Disallow: /_next/static/

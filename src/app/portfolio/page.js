@@ -170,7 +170,7 @@ export default function PortfolioPage() {
 
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Grid container spacing={6} justifyContent="center">
-            <Grid item size={{ xs: 12, md: 10 }} textAlign="center">
+            <Grid size={{ xs: 12, md: 10 }} textAlign="center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -240,7 +240,7 @@ export default function PortfolioPage() {
 
           <Grid container spacing={6}>
             {filteredProjects.filter(project => project.featured).map((project, index) => (
-              <Grid item size={{ xs: 12, sm: 12, md: 12 }} key={project.id}>
+              <Grid size={{ xs: 12, sm: 12, md: 12 }} key={project.id}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -344,7 +344,7 @@ export default function PortfolioPage() {
 
           <Grid container spacing={4}>
             {filteredProjects.filter(project => !project.featured).map((project, index) => (
-              <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={project.id}>
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={project.id}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -434,7 +434,7 @@ export default function PortfolioPage() {
 
           <Grid container spacing={6}>
             {filteredProjects.slice(0, 2).map((project, index) => (
-              <Grid item size={{ xs: 12, sm: 12, md: 12 }} key={`case-${project.id}`}>
+              <Grid size={{ xs: 12, sm: 12, md: 12 }} key={`case-${project.id}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -450,7 +450,7 @@ export default function PortfolioPage() {
                   >
                     <CardContent sx={{ p: 4 }}>
                       <Grid container spacing={4}>
-                        <Grid item xs={12} md={8}>
+                        <Grid  size={{ xs: 12, md: 8 }}>
                           <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 700 }}>
                             {project.title}: {project.subtitle}
                           </Typography>
@@ -498,7 +498,7 @@ export default function PortfolioPage() {
                           </Button>
                         </Grid>
 
-                        <Grid item xs={12} md={4}>
+                        <Grid  size={{ xs: 12, md: 4 }}>
                           <Box
                             sx={{
                               backgroundColor: theme.palette.background.default,
@@ -588,7 +588,7 @@ export default function PortfolioPage() {
               { number: '05', title: 'Testing', description: 'Rigorous testing ensures your solution works flawlessly across all devices and scenarios.' },
               { number: '06', title: 'Launch & Support', description: 'We handle the deployment process and provide ongoing support to ensure continued success.' },
             ].map((step, index) => (
-              <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}

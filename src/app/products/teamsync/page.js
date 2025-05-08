@@ -162,7 +162,7 @@ export default function TeamSyncPage() {
 
                 <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
                     <Grid container spacing={6} alignItems="center">
-                        <Grid item size={{ xs: 12, md: 6 }}  >
+                        <Grid size={{ xs: 12, md: 6 }}  >
                             <motion.div
                                 initial={{ opacity: 0, x: -30 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -239,7 +239,7 @@ export default function TeamSyncPage() {
                             </motion.div>
                         </Grid>
 
-                        <Grid item size={{ xs: 12, md: 6 }}  >
+                        <Grid size={{ xs: 12, md: 6 }}  >
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
@@ -282,7 +282,7 @@ export default function TeamSyncPage() {
 
                     <Grid container spacing={4}>
                         {features.map((feature, index) => (
-                            <Grid item size={{ xs: 12, sm: 6, md: 12 }} key={index}>
+                            <Grid size={{ xs: 12, sm: 6, md: 12 }} key={index}>
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -338,7 +338,7 @@ export default function TeamSyncPage() {
             >
                 <Container maxWidth="lg">
                     <Grid container spacing={6} alignItems="center">
-                        <Grid item size={{ xs: 12, md: 6 }}  >
+                        <Grid size={{ xs: 12, md: 6 }}  >
                             <SectionTitle
                                 title="Technical Features"
                                 subtitle="Built with modern technology to ensure reliability, security, and excellent performance."
@@ -374,7 +374,7 @@ export default function TeamSyncPage() {
                             </List>
                         </Grid>
 
-                        <Grid item size={{ xs: 12, md: 6 }}  >
+                        <Grid size={{ xs: 12, md: 6 }}  >
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -416,7 +416,7 @@ export default function TeamSyncPage() {
 
                     <Grid container spacing={4} sx={{ mt: 2 }}>
                         {pricingPlans.map((plan, index) => (
-                            <Grid item size={{ xs: 12, md: 4 }} key={index}>
+                            <Grid size={{ xs: 12, md: 4 }} key={index}>
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}

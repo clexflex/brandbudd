@@ -54,7 +54,6 @@ brandbudd
 │  ├─ globe.svg
 │  ├─ images
 │  │  ├─ clients
-│  │  │  ├─ client-1.png
 │  │  │  ├─ client-1.webp
 │  │  │  ├─ client-12.webp
 │  │  │  ├─ client-14.svg
@@ -91,10 +90,10 @@ brandbudd
 │  │  │  ├─ Manage_Files_Download__ExcelFlow360.png
 │  │  │  ├─ Processed_Excel_ExcelFlow360.png
 │  │  │  ├─ Recipient Growth Trends_Analytics_Dashboards_Preview.png
-│  │  │  ├─ Step_1_Upload_Excel_Sheet_ExcelFlow360.png
-│  │  │  ├─ Step_2_Select the file_ExcelFlow360.png
-│  │  │  ├─ Step_3_Processing_ExcelFlow360.png
-│  │  │  ├─ Step_4_Completed_ExcelFlow360.png
+│  │  │  ├─ Step_1_ExcelFlow360.png
+│  │  │  ├─ Step_2_ExcelFlow360.png
+│  │  │  ├─ Step_3_ExcelFlow360.png
+│  │  │  ├─ Step_4_ExcelFlow360.png
 │  │  │  ├─ ecomm1.png
 │  │  │  ├─ ecommerce.jpg
 │  │  │  ├─ ecommerce_Cart.jpg

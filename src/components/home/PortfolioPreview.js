@@ -84,7 +84,7 @@ const PortfolioPreview = () => {
                 direction={index % 2 === 0 ? 'row' : 'row-reverse'}
               >
                 {/* Content Side */}
-                <Grid item size={{ xs: 12, md: 5 }}>
+                <Grid size={{ xs: 12, md: 5 }}>
                   <Box
                     sx={{
                       p: { xs: 4, md: 6 },
@@ -184,7 +184,7 @@ const PortfolioPreview = () => {
                 </Grid>
                 
                 {/* Image Side */}
-                <Grid item size={{ xs: 12, md: 7 }}>
+                <Grid size={{ xs: 12, md: 7 }}>
                   <Box
                     sx={{
                       position: 'relative',

@@ -296,7 +296,7 @@ export default function ServicesPage() {
         
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Grid container spacing={6} justifyContent="center">
-            <Grid item  size={{ xs: 12, md: 10 }}   textAlign="center">
+            <Grid  size={{ xs: 12, md: 10 }}   textAlign="center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -370,7 +370,7 @@ export default function ServicesPage() {
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             {services.map((service, index) => (
-              <Grid item size={{ xs: 12, sm: 6 }}   key={service.id}>
+              <Grid size={{ xs: 12, sm: 6 }}   key={service.id}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -492,7 +492,7 @@ export default function ServicesPage() {
         >
           <Container maxWidth="lg">
             <Grid container spacing={6} alignItems="center" direction={index % 2 === 0 ? 'row' : 'row-reverse'}>
-              <Grid item size={{ xs: 12,md: 6 }}  >
+              <Grid size={{ xs: 12,md: 6 }}  >
                 <motion.div
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -542,7 +542,7 @@ export default function ServicesPage() {
                   
                   <Grid container spacing={1} sx={{ mb: 4 }}>
                     {service.features.map((feature, featureIndex) => (
-                      <Grid item xs={12} sm={6} key={featureIndex}>
+                      <Grid size={{ xs: 12, md: 6 }} key={featureIndex}>
                         <Box
                           sx={{
                             display: 'flex',
@@ -580,7 +580,7 @@ export default function ServicesPage() {
                 </motion.div>
               </Grid>
               
-              <Grid item  size={{ xs: 12,  md: 6 }}  >
+              <Grid  size={{ xs: 12,  md: 6 }}  >
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}

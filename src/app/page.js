@@ -1,43 +1,36 @@
-'use client';
-import { Box } from '@mui/material';
-import HeroSection from '@/components/home/HeroSection';
-import ServicesOverview from '@/components/home/ServicesOverview';
-import PortfolioPreview from '@/components/home/PortfolioPreview';
-import ProcessSection from '@/components/home/ProcessSection';
-import TestimonialsSection from '@/components/home/TestimonialsSection';
-import CtaSection from '@/components/common/CtaSection';
-import { motion } from 'framer-motion';
+import HomePage from '@/components/HomePage';
 
-// SEO Metadata
-export const Metadata = {
+export const metadata = {
   title: 'BrandBudd | Digital Marketing & Software Development Agency',
-  description: 'BrandBudd is a full-service digital marketing and software development agency specializing in web development, SEO, content creation, and custom software solutions.',
-  keywords: 'digital marketing, web development, SEO, software development, agency, digital solutions',
+  description: 'BrandBudd provides cutting-edge digital marketing strategies and custom software solutions for businesses worldwide, with expertise in India, Pune, Mumbai, and Kolhapur. Services in English, Hindi, and Marathi.',
+  keywords: 'digital marketing agency, web development company, SEO services, software development, global digital agency, Pune digital services, Mumbai software development, Kolhapur web design, Marathi-speaking consultants, MERN stack development, React developers, digital transformation, custom software solutions, TeamSync, ExcelFlow360',
+  alternates: {
+    canonical: 'https://brandbudd.com',
+  },
+  openGraph: {
+    title: 'BrandBudd | Digital Marketing & Software Development Agency',
+    description: 'BrandBudd provides cutting-edge digital marketing strategies and custom software solutions for businesses worldwide, with expertise in India, Pune, Mumbai, and Kolhapur. Services in English, Hindi, and Marathi.',
+    url: 'https://brandbudd.com',
+    siteName: 'BrandBudd',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: 'https://brandbudd.com/images/hero/brandbudd-social-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'BrandBudd - Digital Marketing & Software Development Agency',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BrandBudd | Digital Marketing & Software Development Agency',
+    description: 'BrandBudd provides cutting-edge digital marketing strategies and custom software solutions for businesses worldwide, with expertise in India, Pune, Mumbai, and Kolhapur.',
+    images: ['https://brandbudd.com/images/hero/brandbudd-social-logo.png'],
+  },
 };
 
 export default function Home() {
-  return (
-    <Box component="div">
-      <HeroSection />
-      
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <ServicesOverview />
-      </motion.div>
-      
-      <PortfolioPreview />
-      <ProcessSection />
-      <TestimonialsSection />
-      <CtaSection 
-        title="Ready to Transform Your Digital Presence?"
-        description="Contact us today to discuss how our tailored solutions can help your business grow."
-        buttonText="Get Started"
-        buttonLink="/contact"
-        background="gradient"
-      />
-    </Box>
-  );
+  return <HomePage />;
 }

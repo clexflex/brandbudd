@@ -76,7 +76,7 @@ const ServicesOverview = () => {
         
         <Grid container spacing={3} justifyContent="center">
           {services.map((service, index) => (
-            <Grid item size={{ xs: 12, sm: 6 }}  key={service.id}>
+            <Grid size={{ xs: 12, sm: 6 }}  key={service.id}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
