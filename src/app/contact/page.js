@@ -72,27 +72,6 @@ export default function ContactPage() {
     }
   };
   
-  const validateForm = () => {
-    const newErrors = {};
-    
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-    
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
-    }
-    
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-  
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     
@@ -102,6 +81,28 @@ export default function ContactPage() {
       setOpenSnackbar(true);
       return;
     }
+    
+    // Move validateForm inside useCallback
+    const validateForm = () => {
+      const newErrors = {};
+      
+      if (!formData.name.trim()) {
+        newErrors.name = 'Name is required';
+      }
+      
+      if (!formData.email.trim()) {
+        newErrors.email = 'Email is required';
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
+        newErrors.email = 'Invalid email address';
+      }
+      
+      if (!formData.message.trim()) {
+        newErrors.message = 'Message is required';
+      }
+      
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
     
     if (validateForm()) {
       setLoading(true);
@@ -120,9 +121,9 @@ export default function ContactPage() {
             recaptchaToken,
           }),
         });
-
+  
         const data = await response.json();
-
+  
         if (response.ok) {
           setSnackbarMessage('Your message has been sent successfully! We\'ll get back to you soon.');
           setSnackbarSeverity('success');
@@ -152,7 +153,7 @@ export default function ContactPage() {
         setLoading(false);
       }
     }
-  }, [executeRecaptcha, isLoaded, formData, validateForm]);
+  }, [executeRecaptcha, isLoaded, formData, setErrors, setSnackbarMessage, setSnackbarSeverity, setOpenSnackbar, setLoading, setFormData]);
   
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
