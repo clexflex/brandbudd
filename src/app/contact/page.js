@@ -34,6 +34,7 @@ const budgetRanges = [
   '$100,000+',
   'Not sure yet',
 ];
+
 export default function ContactPage() {
   const theme = useTheme();
   const { executeRecaptcha, isLoaded } = useRecaptcha(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY);
@@ -71,30 +72,29 @@ export default function ContactPage() {
     }
   };
   
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
+      newErrors.email = 'Invalid email address';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+  
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
-    
-    // Moved validateForm inside handleSubmit
-    const validateForm = () => {
-      const newErrors = {};
-      
-      if (!formData.name.trim()) {
-        newErrors.name = 'Name is required';
-      }
-      
-      if (!formData.email.trim()) {
-        newErrors.email = 'Email is required';
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
-        newErrors.email = 'Invalid email address';
-      }
-      
-      if (!formData.message.trim()) {
-        newErrors.message = 'Message is required';
-      }
-      
-      setErrors(newErrors);
-      return Object.keys(newErrors).length === 0;
-    };
     
     if (!isLoaded) {
       setSnackbarMessage('reCAPTCHA not loaded. Please refresh the page and try again.');
@@ -152,12 +152,13 @@ export default function ContactPage() {
         setLoading(false);
       }
     }
-  }, [executeRecaptcha, isLoaded, formData, setErrors]);
+  }, [executeRecaptcha, isLoaded, formData, validateForm]);
   
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
   
+ 
   return (
     <Box component="div">
       {/* Hero Section */}
